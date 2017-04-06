@@ -1,0 +1,69 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+    <script src="http://code.jquery.com/jquery-3.1.0.min.js" type="text/javascript"></script>
+    <script src="https://cdn.auth0.com/js/lock/10.5/lock.min.js"></script>
+    <script type="text/javascript" src="//use.typekit.net/iws6ohy.js"></script>
+    <script type="text/javascript">
+    try {
+        Typekit.load();
+    } catch (e) {}
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- font awesome from BootstrapCDN -->
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+    <script>
+    var AUTH0_CLIENT_ID = '{{env.AUTH0_CLIENT_ID}}';
+    var AUTH0_DOMAIN = '{{env.AUTH0_DOMAIN}}';
+    var AUTH0_CALLBACK_URL = '{{env.AUTH0_CALLBACK_URL if env.AUTH0_CALLBACK_URL else "http://localhost:3000/callback" }}';
+    </script>
+    <link rel="stylesheet" href="/public/css/style.css">
+    <script src="/public/js/index.js"></script>
+
+    <script src="/public/js/auth0.js"> </script>
+</head>
+
+<body>
+    <section class="navigation">
+        <div class="nav-container">
+            <div class="brand">
+                <a href="#!"><img src="/public/img/guestmeal-logo.png" class="guestmeal-logo"></a>
+            </div>
+            <nav>
+                <div class="nav-mobile"><a id="nav-toggle" href="#!"><span></span></a></div>
+                <ul class="nav-list">
+                    <li>
+                        <a href="#!">Home</a>
+                    </li>
+                    <li>
+                        <a href="#!">About</a>
+                    </li>
+                    <li>
+                        <a href="#!">Contact</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </section>
+    <section class="home">
+        <div class="home-container">
+            <h1> Are you a cheap mofo?</h1>
+            <h1> Do you like meals with strangers?</h1>
+            <h1> Look no further!! Welcome to Guestmeal.me! <br><br></h1>
+
+            <video playsinline autoplay muted loop poster="/public/img/guestmeal-logo.png" id="bgvid">
+                <source src="/public/mp4/background-video.mp4" type="video/mp4">
+            </video>
+
+            <div class="auth0-container">
+                <a class="btn btn-primary btn-lg auth0-login-button">SignIn</a>
+            </div>
+        </div>
+
+    </section>
+    
+</body>
+
+</html>
